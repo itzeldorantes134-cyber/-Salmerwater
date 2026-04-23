@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>SalmerWater</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar {
+ position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 15px 20px; 
+    box-sizing: border-box; 
+    transition: 0.3s;
+    z-index: 100;
+}
+
+.navbar.active {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.navbar img {
+    height: 60px;
+}
+
+.navbar a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.navbar.active a {
+    color: #333;
+}
+
+/* PORTADA */
+.hero {
+    height: 100vh;
+    background: url("portada.jpeg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.hero div {
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 50px;
+}
+
+.btn {
+    padding: 12px 25px;
+    background: #00c6ff;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* SECCIONES */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* ANIMACIONES */
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.6s;
+}
+
+.fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* NOSOTROS */
+.nosotros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+}
+
+.nosotros img {
+    width: 300px;
+    border-radius: 15px;
+}
+
+/* PRODUCTOS */
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* GALERIA */
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.galeria img {
+    width: 300px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.galeria img:hover {
+    transform: scale(1.1);
+}
+
+/* BOTONES */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.facebook {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: #1877F2;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+/* FOOTER */
+footer {
+    background: #333;
+    color: white;
+    padding: 20px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="navbar" id="navbar">
+    <img src="logo.png">
+    <div>
+        <a href="#">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#productos">Productos</a>
+    </div>
+</div>
+
+<section class="hero">
+    <div>
+        <h1>SalmerWater</h1>
+        <p>Todo para tu purificadora en un solo lugar 💧</p>
+        <a href="#galeria" class="btn">Ver Fotos</a>
+    </div>
+</section>
+
+<section id="nosotros" class="fade">
+    <h2>¿Quiénes somos?</h2>
+    <div class="nosotros">
+        <img src="nosotros.jpeg">
+        <p>Somos un equipo de ingenieros y técnicos especializados en sistemas de purificación de agua. 
+En SalmerWater nos dedicamos a la venta, instalación y mantenimiento de equipos para purificadoras, 
+brindando soluciones eficientes y de alta calidad.
+
+Nuestro objetivo es ayudar a nuestros clientes a ofrecer agua limpia y segura, utilizando tecnología confiable 
+y un servicio profesional. Nos distinguimos por nuestro compromiso, atención personalizada y experiencia en el área.
+
+Trabajamos con diferentes tipos de sistemas como filtros, ósmosis inversa y mantenimiento integral, 
+adaptándonos a las necesidades de cada cliente.</p>
+    </div>
+</section>
+
+<section id="productos" class="fade">
+    <h2>Productos</h2>
+    <div class="productos">
+        <div class="card"><h3>Filtros</h3></div>
+        <div class="card"><h3>Ósmosis</h3></div>
+        <div class="card"><h3>Instalación</h3></div>
+        <div class="card"><h3>Mantenimiento</h3></div>
+    </div>
+</section>
+
+<section id="galeria" class="fade">
+    <h2>Galería</h2>
+    <div class="galeria">
+        <img src="foto1.jpeg">
+        <img src="foto2.jpeg">
+        <img src="foto3.jpeg">
+    </div>
+</section>
+
+<header style="text-align: center; padding: 20px;">
+    <img src="logo.png" alt="Mi logo" width="120">
+</header>
+
+<a class="facebook" href="https://www.facebook.com/profile.php?id=61573319836731" target="_blank">
+<i class="fab fa-facebook-f"></i>
+</a>
+
+<a class="whatsapp" href="https://wa.me/527443558466" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<footer>
+<p>SalmerWater © 2026</p>
+</footer>
+
+<script>
+// NAVBAR EFECTO
+window.addEventListener("scroll", function(){
+    let nav = document.getElementById("navbar");
+    nav.classList.toggle("active", window.scrollY > 50);
+});
+
+// ANIMACIÓN SCROLL
+let fades = document.querySelectorAll(".fade");
+
+window.addEventListener("scroll", () => {
+    fades.forEach(el => {
+        let top = el.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            el.classList.add("visible");
+        }
+    });
+});
+</script>
+
+</body>
+</html>
